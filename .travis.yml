@@ -8,3 +8,6 @@
   - # do stuff with Java 8
   - jdk_switcher use openjdk8
   - # do stuff with open Java 8
+language: java
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
