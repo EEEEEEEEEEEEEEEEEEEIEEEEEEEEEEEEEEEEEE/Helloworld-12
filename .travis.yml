@@ -12,20 +12,6 @@
 language: java
 after_success:
   - bash <(curl -s https://codecov.io/bash)
-notifications:      # 邮箱通知
-  email: false
-
-sudo: false #有定制化开发环境需要，默认false，不开启容器，编译效率高
-
-before_install: 
-  - pip install tensorflow #加sudo默认系统环境里的python，使用虚拟环境需加-E参数 
-  - pip install codecov 
-  - pip install coverage
-
-install: true
-
-script: 
-  - coverage run Hello.java
-
-after_success:
-  - codecov #运行codecov
+env:
+  global:
+    - CODECOV_TOKEN=:env:04c96c19-b367-4a84-990c-299abadee7ec
