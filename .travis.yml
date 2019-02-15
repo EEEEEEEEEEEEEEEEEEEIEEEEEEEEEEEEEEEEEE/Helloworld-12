@@ -25,7 +25,7 @@ before_install:
 install: true
 
 script: 
-  - coverage run main.py
+  - coverage run Hello.java
 
 after_success:
   - codecov #运行codecov
